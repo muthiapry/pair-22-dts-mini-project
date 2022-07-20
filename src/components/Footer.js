@@ -9,7 +9,7 @@ function Copyright(props) {
     return (
       <Typography variant="body2" color="text.secondary" {...props}>
         {'Copyright © '}
-        <Link color="inherit" href="https://mui.com/">
+        <Link color="inherit" href="https://github.com/muthiapry/pair-22-dts-mini-project">
           Pair 22
         </Link>{' '}
         {new Date().getFullYear()}
@@ -20,22 +20,16 @@ function Copyright(props) {
 
   const footers = [
     {
-      description: ['Team', 'History', 'Contact us', 'Locations'],
+      description: ['Audio and Subtitles', 'Media Center', 'Security', 'Contact us']
     },
     {
-      description: [
-        'Cool stuff',
-        'Random feature',
-        'Team feature',
-        'Developer stuff',
-        'Another one',
-      ],
+      description: ['Audio Description', 'Investor Relations', 'Legal Provisions']
     },
     {
-      description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
+      description: ['Help center', 'Jobs', 'Cookie Preferences']
     },
     {
-      description: ['Privacy policy', 'Terms of use'],
+      description: ['Gift Cards', 'Terms of Ise', 'Corporate Information']
     },
   ];
   
@@ -56,7 +50,7 @@ const Footer = () => {
               <ul style={{listStyleType: "none", paddingLeft: 0}}>
                 {footer.description.map((item) => (
                   <li key={item}>
-                    <Link href="#" variant="subtitle1" color="text.secondary" underline="none">
+                    <Link href="#" variant="h6" underline="none" sx={{fontWeight: 400, fontSize: 13}}>
                       {item}
                     </Link>
                   </li>
@@ -65,8 +59,8 @@ const Footer = () => {
             </Grid>
           ))}
         </Grid>
-        <Button variant="outlined">Source Code</Button>
-        <Copyright sx={{ mt: 3 }} />
+        <Button variant="outlined" href="https://github.com/muthiapry/pair-22-dts-mini-project" target="_blank" sx={{fontWeight: 400, fontSize: 13}}>Source Code</Button>
+        <Copyright sx={{ mt: 3, fontWeight: 300, fontSize: 11, color: "#808080" }} />
       </Container>
   );
 };

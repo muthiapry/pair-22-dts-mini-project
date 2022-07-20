@@ -2,14 +2,14 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
     palette: {
-        type: 'dark',
+        mode: 'dark',
         primary: {
-          main: '#141414',
+          main: '#808080',
         },
         secondary: {
-          main: '#201F1F',
+          main: '#E5E5E5',
         },
-      },
+    },
 });
 
 export default theme;

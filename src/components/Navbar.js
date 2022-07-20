@@ -14,7 +14,7 @@ const Navbar = () => {
     <Box sx={{ display: 'flex' }}>
       <AppBar component="nav">
         <Toolbar>
-            <img src={Logo} alt="logo" className='Movie-logo'/>
+            <img src={Logo} alt="logo" className='Movie-logo' style={{display: "flex",  marginRight: 100, marginLeft:70, width: 35}}/>
           <Typography
             variant="h6"
             component="div"
