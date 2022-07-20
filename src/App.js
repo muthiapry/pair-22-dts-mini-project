@@ -10,6 +10,7 @@ import { ThemeProvider, CssBaseline } from '@mui/material';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import theme from './themes/theme';
+import MovieList from './containers/MovieList';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <CssBaseline />
       <div className="App">
         <Navbar/>
+        <MovieList/>
         <Footer/>
       </div>
     </ThemeProvider>
