@@ -7,7 +7,18 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MovieList from './containers/MovieList';
 import MovieDetail from './containers/MovieDetail';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import App from "./App";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Login from "./containers/Login";
+import NoMatch from "./containers/NoMatch";
+import Register from "./containers/Register";
+import reportWebVitals from "./reportWebVitals";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
