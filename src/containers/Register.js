@@ -16,22 +16,22 @@ import { auth } from "../config/firebase";
 
 const Register = () => {
   const navigate = useNavigate();
-    const [errorMessage, setErrorMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState("");
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        const email = data.get('email');
-        const password = data.get('password');
-        
-        try {
-            const { user } = await createUserWithEmailAndPassword(auth, email, password);
-            console.log(user);
-            navigate("/");
-        } catch (error) {
-            setErrorMessage(error.message);
-        }
-    };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const email = data.get("email");
+    const password = data.get("password");
+
+    try {
+      const { user } = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(user);
+      navigate("/");
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -101,7 +101,7 @@ const Register = () => {
               </Button>
               <Grid container justifyContent="flex-end">
                 <Grid item>
-                  <Link to="/login" color="white">Already have an account? Sign in</Link>
+                  <Link to="/login" style={{ color: "#808080" }}>Already have an account? Sign in</Link>
                 </Grid>
               </Grid>
             </Box>
