@@ -6,17 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MovieList from './containers/MovieList';
 import MovieDetail from './containers/MovieDetail';
-
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-import App from "./App";
-import ProtectedRoute from "./components/ProtectedRoute";
-import Login from "./containers/Login";
-import NoMatch from "./containers/NoMatch";
-import Register from "./containers/Register";
-import reportWebVitals from "./reportWebVitals";
+import PrivateComponent from './components/PrivateComponent';
+import NoMatch from './containers/NoMatch';
+import Login from './containers/Login';
+import Register from './containers/Register';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -24,11 +17,22 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={
-            <App />
+            <PrivateComponent>
+              <App />
+            </PrivateComponent>
         }>
           <Route path="/" element={<MovieList />} />
           <Route path="detail/:id" element={<MovieDetail />} />
         </Route>
+        <Route path="login" element={
+          <PrivateComponent loginOnly={false}>
+            <Login />
+          </PrivateComponent>} />
+        <Route path="register" element={
+          <PrivateComponent loginOnly={false}>
+            <Register/>
+          </PrivateComponent>} />
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

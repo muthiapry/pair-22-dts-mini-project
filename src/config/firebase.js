@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 
 // TODO: replace with your own config
 const firebaseConfig = {
-  apiKey: "AIzaSyCndr4goRuC778cxITItcK5Xqu9udQTkXY",
-  authDomain: "pair-22-miniproject.firebaseapp.com",
-  projectId: "pair-22-miniproject",
-  storageBucket: "pair-22-miniproject.appspot.com",
-  messagingSenderId: "488571336554",
-  appId: "1:488571336554:web:aeee54405f4c8936659713",
+  apiKey: "AIzaSyBRp61F4qdMzThcIwUbwWY2bvFQBYBuQYY",
+  authDomain: "movie-list-d21c5.firebaseapp.com",
+  projectId: "movie-list-d21c5",
+  storageBucket: "movie-list-d21c5.appspot.com",
+  messagingSenderId: "818831655856",
+  appId: "1:818831655856:web:0bf556188c1b7a7f620c75"
 };
 
 const app = initializeApp(firebaseConfig);

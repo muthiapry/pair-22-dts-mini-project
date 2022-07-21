@@ -1,20 +1,29 @@
-// import { MovieFilter } from '@mui/icons-material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import Logo from '../movie_logo.png';
+import { Link, NavLink } from 'react-router-dom';
 
-const navItems = ['Indonesian', 'Pricing', 'About'];
+import UserLog from './UserLog';
+
+const navItems = [
+  { text: 'Home', link: '/' },
+  { text: 'Series', link: '#' },
+  { text: 'Movies', link: '#' },
+  { text: 'New and Popular', link: '#' },
+  { text: 'My LIst', link: '#' }
+];
 
 const Navbar = () => {
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar component="nav">
-        <Toolbar>
-            <img src={Logo} alt="logo" className='Movie-logo' style={{display: "flex",  marginRight: 100, marginLeft:70, width: 35}}/>
+      <AppBar>
+      <Toolbar>
+            <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/">
+              <img src={Logo} alt="logo" className='Movie-logo' style={{display: "flex",  marginRight: 100, marginLeft:70, width: 35}}/>
+            </Link>
           <Typography
             variant="h6"
             component="div"
@@ -26,18 +35,23 @@ const Navbar = () => {
               letterSpacing: '.3rem',
             }}
           >
-            NONTON
+            {navItems.map((item) => (
+              <NavLink
+                to={item.link}
+                key={item.text}
+                style={{ textDecoration: 'none', color: "#fff", fontFamily: 'Inter', fontWeight: "400" }}
+                className={({ isActive }) => isActive ? 'nav-active' : 'nav-inactive'}
+              >
+                {item.text}
+              </NavLink>
+            ))}
           </Typography>
           <Box sx={{ display: 'block' }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
-            ))}
+            <UserLog />
           </Box>
         </Toolbar>
       </AppBar>
-    </Box>
+    </Box >
   );
 }
 
