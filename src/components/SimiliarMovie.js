@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 
 const BASE_IMAGE_URL = "http://image.tmdb.org/t/p/original";
 
-const PopularMovie = () => {
+const SimiliarMovie = ({ id_movie }) => {
     let navigate = useNavigate();
 
     const onClickMovie = (id) => {
@@ -25,7 +25,7 @@ const PopularMovie = () => {
     useEffect(() => {
         const fetchMovies = async () => {
             try {
-                const fetchedMovies = await tmdb.get("movie/popular");
+                const fetchedMovies = await tmdb.get(`movie/${id_movie}/similar`);
                 setMovies(fetchedMovies.data.results);
             } catch (error) {
                 console.log(error);
@@ -33,12 +33,12 @@ const PopularMovie = () => {
         }
 
         fetchMovies();
-    }, []);
+    }, [id_movie]);
 
     return (
         <Box sx={{margin: 10}}>
             <Typography variant="h6" gutterBottom component="div">
-                Popular
+                Similiar Movie
             </Typography>
             <div className="container">
                 <Swiper
@@ -93,4 +93,4 @@ const PopularMovie = () => {
     );
 }
 
-export default PopularMovie;
+export default SimiliarMovie;

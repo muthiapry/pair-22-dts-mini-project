@@ -1,38 +1,20 @@
 import { Box } from '@mui/material';
-import { useEffect, useState } from 'react';
-
-import tmdb from '../apis/tmdb';
-import MovieCard from '../components/MovieCard';
+import NowPlayingMovie from '../components/NowPlayingMovie';
+import PopularMovie from '../components/PopularMovie';
+import SliderMovie from '../components/SliderMovie';
+import TopRatedMovie from '../components/TopRatedMovie';
+import UpcomingMovie from '../components/UpcomingMovie';
+import WeekTrendingMovie from '../components/WeekTrendingMovie';
 
 const MovieList = () => {
-    const [movies, setMovies] = useState([]);
-
-    useEffect(() => {
-        const fetchMovies = async () => {
-            try {
-                const fetchedMovies = await tmdb.get("trending/movie/week");
-                setMovies(fetchedMovies.data.results);
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
-        fetchMovies();
-    }, []);
-
     return (
-        <Box sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            mt: 5,
-        }}>
-            {
-                movies.map(movie => (
-                    <MovieCard movie={movie}></MovieCard>
-                ))
-            }
+        <Box>
+            <SliderMovie/>
+            <NowPlayingMovie/>
+            <PopularMovie/>
+            <TopRatedMovie/>
+            <UpcomingMovie/>
+            <WeekTrendingMovie/>
         </Box>
     );
 }
