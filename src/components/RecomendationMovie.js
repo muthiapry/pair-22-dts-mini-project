@@ -38,7 +38,7 @@ const RecomendationMovie = ({ id_movie }) => {
     return (
         <Box sx={{margin: 10}}>
             <Typography variant="h6" gutterBottom component="div">
-                Similiar Movie
+                Recomendation
             </Typography>
             <div className="container">
                 <Swiper
