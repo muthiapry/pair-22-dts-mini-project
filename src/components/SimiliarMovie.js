@@ -82,7 +82,7 @@ const SimiliarMovie = ({ id_movie }) => {
                                         className="slide-img"
                                         />
                                     )}
-                                    <div>{movie.original_title}</div>
+                                    <div className='imgTitle'>{movie.original_title}</div>
                                 </div>
                             </SwiperSlide>
                         ))

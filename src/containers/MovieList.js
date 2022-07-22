@@ -11,9 +11,9 @@ const MovieList = () => {
         <Box>
             <SliderMovie/>
             <NowPlayingMovie/>
-            <PopularMovie/>
-            <TopRatedMovie/>
             <UpcomingMovie/>
+            <TopRatedMovie/>
+            <PopularMovie/>
             <WeekTrendingMovie/>
         </Box>
     );
